@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ذبايح أبو عايض</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Majlis at night: smoky brown ground, brick-red for action, cream for text, a thread of brass for hospitality. Layout: one narrow reading column with full-bleed bands. */
+  --ground:#140d0c;
+  --raised:#1f1513;
+  --line:#3a2723;
+  --cream:#f5e9d7;
+  --muted:#c4a68f;
+  --brick:#c8402e;
+  --brick-hi:#e0533e;
+  --brass:#d9a441;
+  --wa:#1fb855;
+  --display:"Aref Ruqaa","Cairo",serif;
+  --head:"Cairo","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","Cairo",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--cream);font-family:var(--body);font-size:18px;line-height:1.75}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);line-height:1.25;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:6px}
+
+/* pattern band */
+.pattern{background-color:var(--ground);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cpath d='M48 8 L60 36 L88 48 L60 60 L48 88 L36 60 L8 48 L36 36 Z' fill='none' stroke='%23d9a441' stroke-opacity='.07' stroke-width='2'/%3E%3C/svg%3E")}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(20,13,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.brand small{font-family:var(--head);font-weight:700;color:var(--muted);font-size:15px}
+.brand b{font-family:var(--display);font-size:30px;line-height:1}
+.brand b span{color:var(--brick-hi)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:800;text-decoration:none;border-radius:999px;padding:12px 22px;font-size:17px;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#19a24a}
+.btn-ghost{border:2px solid var(--line);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--brass)}
+.wa-ico{width:22px;height:22px;flex:none}
+
+/* hero */
+.hero{padding-block:48px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:700;color:var(--brass);font-size:16px;border:1px solid var(--line);border-radius:999px;padding:4px 14px}
+.hero h1{font-family:var(--display);font-size:clamp(46px,7vw,84px);margin-top:18px;line-height:1.2;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--brick-hi)}
+.hero p.lead{margin-top:18px;color:var(--muted);font-size:20px;max-width:34em}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.num-note{margin-top:14px;font-size:15px;color:var(--muted)}
+.num-note bdi{font-family:var(--head);font-weight:800;color:var(--cream);letter-spacing:.5px}
+.phone{justify-self:center;width:min(320px,100%);aspect-ratio:9/16;border-radius:36px;padding:10px;background:#0b0706;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 6px rgba(217,164,65,.08)}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:28px;background:#000}
+
+/* section heads */
+section{padding-block:64px}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;max-width:40em}
+.sec-head .eyebrow{font-family:var(--head);font-weight:800;color:var(--brick-hi);font-size:15px}
+.sec-head h2{font-size:clamp(30px,4.4vw,44px);font-weight:900}
+.sec-head p{color:var(--muted)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.steps li{padding:26px 22px 28px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.steps li:not(:nth-child(3n)){border-left:1px solid var(--line)}
+.steps .n{font-family:var(--head);font-weight:900;font-size:40px;line-height:1;color:var(--brick-hi);min-width:1.2em}
+.steps h3{font-size:22px;font-weight:800}
+.steps p{color:var(--muted);font-size:16px;margin-top:4px}
+
+/* order builder */
+.builder{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.opt-group{background:var(--raised);border:1px solid var(--line);border-radius:18px;padding:20px}
+.opt-group h3{font-size:18px;color:var(--brass);font-weight:800;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--head);font-weight:700;font-size:15px;border:1px solid var(--line);background:transparent;color:var(--cream);border-radius:999px;padding:6px 14px;cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover{border-color:var(--brick)}
+.chip[aria-pressed="true"]{background:var(--brick);border-color:var(--brick);color:#fff}
+.summary{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border:2px dashed var(--line);border-radius:18px;padding:18px 22px}
+.summary output{font-family:var(--head);font-weight:800;font-size:19px}
+.summary small{display:block;color:var(--muted);font-family:var(--body);font-weight:400;font-size:14px}
+
+/* occasions */
+.occ{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.occ div{border-top:3px solid var(--brick);background:var(--raised);border-radius:0 0 16px 16px;padding:22px 18px}
+.occ svg{width:44px;height:44px;margin-bottom:12px}
+.occ h3{font-size:21px;font-weight:800}
+.occ p{color:var(--muted);font-size:15px;margin-top:4px}
+.stamp{display:inline-block;margin-top:12px;font-family:var(--head);font-weight:900;font-size:14px;color:var(--brick-hi);border:2px solid var(--brick-hi);border-radius:8px;padding:0 10px;transform:rotate(-4deg)}
+
+/* compare */
+.compare{width:100%;border-collapse:collapse;font-size:17px}
+.compare th,.compare td{padding:16px 18px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+.compare thead th{font-family:var(--head);font-weight:900;font-size:19px}
+.compare thead th:first-child{color:var(--muted)}
+.compare thead th:last-child{color:var(--brick-hi)}
+.compare td:first-child{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(224,83,62,.6);text-decoration-thickness:2px}
+.compare td:last-child{font-weight:600}
+.compare td:last-child::before{content:"✓ ";color:var(--wa);font-weight:800}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--raised)}
+
+/* videos */
+.reel{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.reel figure{margin:0}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#000;border:1px solid var(--line)}
+.reel figcaption{font-family:var(--head);font-weight:800;font-size:16px;margin-top:10px}
+.reel figcaption span{display:block;color:var(--muted);font-family:var(--body);font-weight:400;font-size:14px}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:760px}
+.faq details{background:var(--raised);border:1px solid var(--line);border-radius:14px;padding:4px 20px}
+.faq summary{cursor:pointer;font-family:var(--head);font-weight:800;font-size:18px;padding-block:14px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brass);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{color:var(--muted);padding-bottom:16px}
+
+/* final */
+.final{text-align:center;padding-block:80px;border-top:1px solid var(--line)}
+.final .name{font-family:var(--display);font-size:clamp(56px,9vw,104px);line-height:1.1}
+.final .name span{color:var(--brick-hi)}
+.final p{color:var(--muted);margin-top:10px;font-size:20px}
+.final .cta-row{justify-content:center}
+.big-num{display:inline-block;margin-top:20px;font-family:var(--head);font-weight:900;font-size:clamp(32px,6vw,52px);letter-spacing:1px}
+footer{padding-block:28px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.float-wa{position:fixed;left:18px;bottom:18px;z-index:30;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.float-wa svg{width:32px;height:32px}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .phone{width:min(280px,80%)}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps li:not(:nth-child(3n)){border-left:0}
+  .steps li:nth-child(odd){border-left:1px solid var(--line)}
+  .builder,.occ{grid-template-columns:1fr 1fr}
+  .reel{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .steps{grid-template-columns:1fr}
+  .steps li:nth-child(odd){border-left:0}
+  .builder,.occ{grid-template-columns:1fr}
+  .reel{grid-template-columns:1fr 1fr}
+  header .btn-wa .lbl{display:none}
+  section{padding-block:48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.chip{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 140 140"><path d="M70 10 a60 60 0 1 1 -32 110 L12 128 L20 102 A60 60 0 0 1 70 10 Z" fill="#fff"/><path d="M50 42 q-10 4 -8 18 q6 28 34 38 q14 3 18 -7 l-12 -10 l-9 6 q-14 -6 -20 -20 l6 -9 Z" fill="#1fb855"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><small>ذبايح</small><b>أبو <span>عايض</span></b></a>
+    <a class="btn btn-wa" href="https://wa.me/966534133679?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B0%D8%A8%D9%8A%D8%AD%D8%A9"><svg class="wa-ico"><use href="#wa"/></svg><span class="lbl">اطلب واتساب</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero pattern">
+    <div class="wrap">
+      <div>
+        <span class="kicker">الطائف وضواحيها</span>
+        <h1>ذبيحتك من الحلال… <em>لين بابك</em></h1>
+        <p class="lead">نختار لك الذبيحة، ونذبحها ذبح شرعي، ونسلخها وننظفها، ونقطّعها على طلبك، وتوصلك مغلّفة وجاهزة للقدر. أنت بس اطلب، والباقي علينا.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa" id="cta-main" href="https://wa.me/966534133679?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B0%D8%A8%D9%8A%D8%AD%D8%A9"><svg class="wa-ico"><use href="#wa"/></svg>اطلب ذبيحتك واتساب</a>
+          <a class="btn btn-ghost" href="#build">اختر طلبك</a>
+        </div>
+        <p class="num-note">أو تواصل على الرقم <bdi dir="ltr">053 413 3679</bdi></p>
+      </div>
+      <div class="phone"><video src="abuayed_journey.mp4" poster="poster_journey.jpg" autoplay muted loop playsinline aria-label="مقطع: من الحلال لين بابك"></video></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">كيف نشتغل</span><h2>ست خطوات، وأنت في مكانك</h2><p>كل ذبيحة تمر بنفس الطريق، من اختيارها لين توصل عندك.</p></div>
+      <ol class="steps">
+        <li><span class="n">١</span><div><h3>نختار لك الذبيحة</h3><p>من أطيب الحلال، وعلى النوع والحجم اللي تبيه.</p></div></li>
+        <li><span class="n">٢</span><div><h3>ذبح شرعي</h3><p>على الطريقة الإسلامية.</p></div></li>
+        <li><span class="n">٣</span><div><h3>سلخ وتنظيف</h3><p>بعناية ونظافة.</p></div></li>
+        <li><span class="n">٤</span><div><h3>تقطيع على طلبك</h3><p>أرباع، مفصّل، للمندي، للكبسة، أو للشوي.</p></div></li>
+        <li><span class="n">٥</span><div><h3>تغليف نظيف</h3><p>جاهزة للقدر على طول.</p></div></li>
+        <li><span class="n">٦</span><div><h3>توصيل لين بابك</h3><p>في الطائف وضواحيها.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="build" class="pattern">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">على كيفك</span><h2>جهّز طلبك وأرسله واتساب</h2><p>اختر من كل قائمة، ونرسل لك الطلب مكتوب في رسالة واتساب جاهزة.</p></div>
+      <div class="builder">
+        <div class="opt-group" data-key="النوع"><h3>النوع</h3><div class="chips"><button class="chip" aria-pressed="true">نعيمي</button><button class="chip" aria-pressed="false">حري</button><button class="chip" aria-pressed="false">سواكني</button><button class="chip" aria-pressed="false">نجدي</button></div></div>
+        <div class="opt-group" data-key="الحجم"><h3>الحجم</h3><div class="chips"><button class="chip" aria-pressed="false">صغير</button><button class="chip" aria-pressed="true">وسط</button><button class="chip" aria-pressed="false">كبير</button></div></div>
+        <div class="opt-group" data-key="التقطيع"><h3>التقطيع</h3><div class="chips"><button class="chip" aria-pressed="false">أرباع</button><button class="chip" aria-pressed="false">مفصّل</button><button class="chip" aria-pressed="true">للمندي</button><button class="chip" aria-pressed="false">للكبسة</button><button class="chip" aria-pressed="false">للشوي</button></div></div>
+        <div class="opt-group" data-key="التغليف"><h3>التغليف</h3><div class="chips"><button class="chip" aria-pressed="true">أكياس</button><button class="chip" aria-pressed="false">صحون مغلّفة</button><button class="chip" aria-pressed="false">كرتون</button></div></div>
+      </div>
+      <div class="summary">
+        <output id="order-sum" aria-live="polite">نعيمي • وسط • للمندي • أكياس<small>طلبك الحالي</small></output>
+        <a class="btn btn-wa" id="order-btn" href="#"><svg class="wa-ico"><use href="#wa"/></svg>أرسل الطلب واتساب</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="occasions">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">لكل مناسباتك</span><h2>عندك عزيمة؟ أبو عايض حاضر</h2></div>
+      <div class="occ">
+        <div><svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="33" rx="5" fill="#f5e9d7"/><rect x="6" y="9" width="36" height="11" rx="5" fill="#c8402e"/><rect x="13" y="4" width="4" height="10" rx="2" fill="#c4a68f"/><rect x="31" y="4" width="4" height="10" rx="2" fill="#c4a68f"/></svg><h3>عزيمة الجمعة</h3><p>الأهل والربع على سفرة وحدة.</p><span class="stamp">حاضرين!</span></div>
+        <div><svg viewBox="0 0 48 48"><rect x="20" y="3" width="8" height="7" rx="3" fill="#e0533e"/><rect x="15" y="9" width="18" height="5" rx="2" fill="#c4a68f"/><rect x="13" y="14" width="22" height="31" rx="8" fill="#f5e9d7"/></svg><h3>عقيقة المولود</h3><p>فرحة تستاهل ذبيحة طيبة.</p><span class="stamp">حاضرين!</span></div>
+        <div><svg viewBox="0 0 48 48"><rect x="12" y="4" width="22" height="40" rx="2" fill="#8a5a3c"/><circle cx="29" cy="25" r="2" fill="#f5e9d7"/><circle cx="40" cy="14" r="5" fill="#c8402e"/></svg><h3>ضيوف جوك فجأة</h3><p>رسالة واتساب، والباقي علينا.</p><span class="stamp">حاضرين!</span></div>
+        <div><svg viewBox="0 0 48 48"><circle cx="20" cy="24" r="16" fill="#f5e9d7"/><circle cx="27" cy="18" r="14" fill="#1f1513"/><path d="M38 8 l2 5 l5 0 l-4 3 l2 5 l-5 -3 l-5 3 l2 -5 l-4 -3 l5 0z" fill="#e0533e"/></svg><h3>رمضان والعيد</h3><p>موسم الكرم والسفرة العامرة.</p><span class="stamp">حاضرين!</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="pattern">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">ليش تتعب نفسك؟</span><h2>الفرق بين الطريقين</h2></div>
+      <div class="tbl">
+        <table class="compare">
+          <thead><tr><th scope="col">بدون أبو عايض</th><th scope="col">مع أبو عايض</th></tr></thead>
+          <tbody>
+            <tr><td>تروح الحلال وتفاوض</td><td>رسالة واتساب وحدة</td></tr>
+            <tr><td>تنتظر ساعات في المسلخ</td><td>ذبح شرعي ونظيف</td></tr>
+            <tr><td>تقطّعها وتغلّفها بنفسك</td><td>تقطيع وتغليف على طلبك</td></tr>
+            <tr><td>زحمة ومشاوير</td><td>توصيل لين بابك</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">شوف بنفسك</span><h2>مقاطعنا</h2><p>اضغط على أي مقطع لتشغيله.</p></div>
+      <div class="reel">
+        <figure><video src="abuayed_journey.mp4" poster="poster_journey.jpg" controls playsinline preload="none"></video><figcaption>من الحلال لين بابك<span>رحلة الذبيحة خطوة بخطوة</span></figcaption></figure>
+        <figure><video src="abuayed_occasions.mp4" poster="poster_occasions.jpg" controls playsinline preload="none"></video><figcaption>عندك عزيمة؟<span>حاضرين لكل مناسباتك</span></figcaption></figure>
+        <figure><video src="abuayed_app.mp4" poster="poster_app.jpg" controls playsinline preload="none"></video><figcaption>على كيفك<span>اختر النوع والتقطيع</span></figcaption></figure>
+        <figure><video src="abuayed_karam.mp4" poster="poster_karam.jpg" controls playsinline preload="none"></video><figcaption>ضيفك عزيز<span>الكرم عادة</span></figcaption></figure>
+        <figure><video src="abuayed_compare.mp4" poster="poster_compare.jpg" controls playsinline preload="none"></video><figcaption>لا تتعب نفسك<span>الفرق بين الطريقين</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="pattern">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">أسئلة تتكرر</span><h2>قبل ما تطلب</h2></div>
+      <div class="faq">
+        <details open><summary>كيف أطلب؟</summary><p>أرسل لنا رسالة واتساب على الرقم <bdi dir="ltr">053 413 3679</bdi>، وقول لنا النوع والحجم وطريقة التقطيع والتغليف، ونرتب معك وقت التوصيل.</p></details>
+        <details><summary>هل الذبح شرعي؟</summary><p>نعم، الذبح على الطريقة الإسلامية.</p></details>
+        <details><summary>وش طرق التقطيع اللي عندكم؟</summary><p>أرباع، مفصّل، للمندي، للكبسة، وللشوي. وإذا تبي طريقة ثانية قول لنا.</p></details>
+        <details><summary>وين توصلون؟</summary><p>نوصل في الطائف وضواحيها.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="name">أبو <span>عايض</span></div>
+      <p>لكرمك… وضيوفك</p>
+      <bdi class="big-num" dir="ltr">053 413 3679</bdi>
+      <div class="cta-row"><a class="btn btn-wa" href="https://wa.me/966534133679?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B0%D8%A8%D9%8A%D8%AD%D8%A9"><svg class="wa-ico"><use href="#wa"/></svg>اطلب ذبيحتك الحين</a></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>ذبايح أبو عايض • الطائف وضواحيها</span><span>ذبح شرعي • تقطيع على طلبك • توصيل</span></div></footer>
+
+<a class="float-wa" href="https://wa.me/966534133679?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%B0%D8%A8%D9%8A%D8%AD%D8%A9" aria-label="تواصل واتساب"><svg><use href="#wa"/></svg></a>
+
+<script>
+(function(){
+  const groups=[...document.querySelectorAll('.opt-group')];
+  const sum=document.getElementById('order-sum');
+  const btn=document.getElementById('order-btn');
+  function update(){
+    const picks=groups.map(g=>({k:g.dataset.key,v:(g.querySelector('.chip[aria-pressed="true"]')||{}).textContent||''}));
+    sum.innerHTML=picks.map(p=>p.v).join(' • ')+'<small>طلبك الحالي</small>';
+    const msg='السلام عليكم، أبي أطلب ذبيحة:\n'+picks.map(p=>p.k+': '+p.v).join('\n');
+    btn.href='https://wa.me/966534133679?text='+encodeURIComponent(msg);
+  }
+  groups.forEach(g=>g.addEventListener('click',e=>{
+    const c=e.target.closest('.chip'); if(!c) return;
+    g.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c?'true':'false'));
+    update();
+  }));
+  update();
+  // only one reel video plays at a time
+  const vids=[...document.querySelectorAll('.reel video')];
+  vids.forEach(v=>v.addEventListener('play',()=>vids.forEach(o=>{if(o!==v)o.pause();})));
+})();
+</script>
+</body>
+</html>
